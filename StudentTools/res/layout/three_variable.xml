@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="100dp">
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <EditText
+            android:id="@+id/editText_three_1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned" />
+
+        <TextView
+            android:id="@+id/textView_three_x1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X + " />
+
+        <EditText
+            android:id="@+id/editText_three_2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned" />
+        
+        
+        <TextView
+            android:id="@+id/textView_three_y1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y + " />
+
+        <EditText
+            android:id="@+id/editText_three_3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned" >
+
+            <requestFocus />
+        </EditText>
+        
+        <TextView
+            android:id="@+id/textView_three_y1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Z = " />
+        
+        <EditText
+            android:id="@+id/editText_three_10"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+    
+    
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <EditText
+            android:id="@+id/editText_three_4"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned" />
+
+        <TextView
+            android:id="@+id/textView_three_x1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X + " />
+
+        <EditText
+            android:id="@+id/editText_three_5"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned" />
+        
+        
+        <TextView
+            android:id="@+id/textView_three_y1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y + " />
+
+        <EditText
+            android:id="@+id/editText_three_6"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned" >
+
+            <requestFocus />
+        </EditText>
+        
+        <TextView
+            android:id="@+id/textView_three_y1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Z = " />
+        
+        <EditText
+            android:id="@+id/editText_three_11"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+    
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <EditText
+            android:id="@+id/editText_three_7"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned" />
+
+        <TextView
+            android:id="@+id/textView_three_x1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X + " />
+
+        <EditText
+            android:id="@+id/editText_three_8"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned" />
+        
+        
+        <TextView
+            android:id="@+id/textView_three_y1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y + " />
+
+        <EditText
+            android:id="@+id/editText_three_9"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned" >
+
+            <requestFocus />
+        </EditText>
+        
+        <TextView
+            android:id="@+id/textView_three_y1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Z = " />
+        
+        <EditText
+            android:id="@+id/editText_three_12"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+    
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <Button
+        android:id="@+id/button_three_Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate" />
+    </LinearLayout>
+
+    
+    
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+    
+    	<TextView
+    	    android:id="@+id/textView_3Result1"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_weight="85.43"
+    	    android:text="  X = "
+    	    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+    
+    	<TextView
+    	    android:id="@+id/textView_3Result2"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_weight="85.43"
+    	    android:text="  Y = "
+    	    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+    
+    
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+    
+    	<TextView
+    	    android:id="@+id/textView_3Result3"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_weight="85.43"
+    	    android:text="  Z = "
+    	    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+    
+    
+</LinearLayout>

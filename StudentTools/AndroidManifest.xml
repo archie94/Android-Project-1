@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.prizm.studenttools"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+  
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        
+        
+        <activity
+            android:name="com.prizm.studenttools.Splash"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+        
+        <activity
+            android:name="com.prizm.studenttools.MainMenu"
+            android:label="@string/app_name" >
+            <intent-filter> 
+                <action android:name="com.prizm.studenttools.MAINMENU" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        
+        
+        <activity
+            android:name="com.prizm.studenttools.Equations"
+            android:label="@string/app_name" >
+            <intent-filter> 
+                <action android:name="com.prizm.studenttools.EQUATIONS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>    
+        </activity>
+        
+        
+        <activity
+            android:name="com.prizm.studenttools.TwoVariable"
+            android:label="@string/app_name" >
+            <intent-filter> 
+                <action android:name="com.prizm.studenttools.TWOVARIABLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>    
+        </activity>
+        
+        <activity
+            android:name="com.prizm.studenttools.ThreeVariable"
+            android:label="@string/app_name" >
+            <intent-filter> 
+                <action android:name="com.prizm.studenttools.THREEVARIABLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>    
+        </activity>
+        <activity
+            android:name="com.prizm.studenttools.Calculator"
+            android:label="@string/app_name" >
+            <intent-filter> 
+                <action android:name="com.prizm.studenttools.CALCULATOR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>    
+        </activity>
+        <activity
+            android:name="com.prizm.studenttools.CalculatorBasic"
+            android:label="@string/app_name" >
+            <intent-filter> 
+                <action android:name="com.prizm.studenttools.CALCULATORBASIC" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>    
+        </activity>
+        <activity
+            android:name="com.prizm.studenttools.Gpa"
+            android:label="@string/app_name" >
+            <intent-filter> 
+                <action android:name="com.prizm.studenttools.GPA" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>    
+        </activity>
+        <activity
+            android:name="com.prizm.studenttools.Memo"
+            android:label="@string/app_name" >
+            <intent-filter> 
+                <action android:name="com.prizm.studenttools.MEMO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>    
+        </activity>
+        
+        
+    </application>
+
+</manifest>

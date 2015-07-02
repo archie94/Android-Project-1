@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="20dp" >
+
+    <TextView
+        android:id="@+id/textView_calc_b_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/button_calc_b_del"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView_calc_b_screen"
+        android:text="DEL" />
+
+    <Button
+        android:id="@+id/button_calc_b_divide"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignBaseline="@+id/button_calc_b_del"
+        android:layout_alignBottom="@+id/button_calc_b_del"
+        android:layout_toRightOf="@+id/button_calc_b_del"
+        android:text="/" />
+
+    <Button
+        android:id="@+id/button_calc_b_multiply"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignBaseline="@+id/button_calc_b_divide"
+        android:layout_alignBottom="@+id/button_calc_b_divide"
+        android:layout_toRightOf="@+id/button_calc_b_divide"
+        android:text="*" />
+
+    <Button
+        android:id="@+id/button_calc_b_subtract"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView_calc_b_screen"
+        android:layout_toRightOf="@+id/button_calc_b_multiply"
+        android:text="-" />
+
+    <Button
+        android:id="@+id/button_calc_b_7"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/button_calc_b_del"
+        android:text="7" />
+
+    <Button
+        android:id="@+id/button_calc_b_8"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignBaseline="@+id/button_calc_b_7"
+        android:layout_alignBottom="@+id/button_calc_b_7"
+        android:layout_alignLeft="@+id/button_calc_b_divide"
+        android:text="8" />
+
+    <Button
+        android:id="@+id/button_calc_b_9"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignBaseline="@+id/button_calc_b_8"
+        android:layout_alignBottom="@+id/button_calc_b_8"
+        android:layout_toRightOf="@+id/button_calc_b_8"
+        android:text="9" />
+
+    <Button
+        android:id="@+id/button_calc_b_4"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/button_calc_b_7"
+        android:text="4" />
+
+    <Button
+        android:id="@+id/button_calc_b_5"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignBaseline="@+id/button_calc_b_4"
+        android:layout_alignBottom="@+id/button_calc_b_4"
+        android:layout_alignLeft="@+id/button_calc_b_8"
+        android:text="5" />
+
+    <Button
+        android:id="@+id/button_calc_b_6"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignBaseline="@+id/button_calc_b_5"
+        android:layout_alignBottom="@+id/button_calc_b_5"
+        android:layout_alignLeft="@+id/button_calc_b_9"
+        android:text="6" />
+
+    <Button
+        android:id="@+id/button_calc_b_plus"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignBottom="@+id/button_calc_b_6"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/button_calc_b_9"
+        android:layout_toRightOf="@+id/button_calc_b_9"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/button_calc_b_2"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignBaseline="@+id/button_calc_b_1"
+        android:layout_alignBottom="@+id/button_calc_b_1"
+        android:layout_toLeftOf="@+id/button_calc_b_dot"
+        android:text="2" />
+
+    <Button
+        android:id="@+id/button_calc_b_equal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button_calc_b_dot"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/button_calc_b_3"
+        android:layout_toRightOf="@+id/button_calc_b_dot"
+        android:text="=" />
+
+    <Button
+        android:id="@+id/button_calc_b_3"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_above="@+id/button_calc_b_0"
+        android:layout_toLeftOf="@+id/button_calc_b_plus"
+        android:text="3" />
+
+    <Button
+        android:id="@+id/button_calc_b_0"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/button_calc_b_2"
+        android:layout_toLeftOf="@+id/button_calc_b_dot"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/button_calc_b_1"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_below="@+id/button_calc_b_4"
+        android:layout_toLeftOf="@+id/button_calc_b_2"
+        android:text="1" />
+
+    <Button
+        android:id="@+id/button_calc_b_dot"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignBaseline="@+id/button_calc_b_0"
+        android:layout_alignBottom="@+id/button_calc_b_0"
+        android:layout_toLeftOf="@+id/button_calc_b_plus"
+        android:text="." />
+
+</RelativeLayout>

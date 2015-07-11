@@ -1,24 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:padding="20dp" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:weightSum="100" >
 
     <TextView
         android:id="@+id/textView_calc_b_screen"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text=""
+        android:background="#ededed"
+        android:layout_weight="15" />
+    
+    <RelativeLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="80"
+     >
+	
+    <TextView
+        android:id="@+id/textView_calc_b_screen2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="TextView" />
+        android:text="" />
 
     <Button
         android:id="@+id/button_calc_b_del"
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView_calc_b_screen"
-        android:text="DEL" />
+        android:layout_below="@+id/textView_calc_b_screen2"
+        android:text="C" />
 
     <Button
         android:id="@+id/button_calc_b_divide"
@@ -43,7 +61,7 @@
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView_calc_b_screen"
+        android:layout_below="@+id/textView_calc_b_screen2"
         android:layout_toRightOf="@+id/button_calc_b_multiply"
         android:text="-" />
 
@@ -163,3 +181,14 @@
         android:text="." />
 
 </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_calc_b_clearAll"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear All"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="5" />
+
+</LinearLayout>

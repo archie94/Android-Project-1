@@ -10,7 +10,7 @@ import android.view.View;
 
 public class CalculatorBasic extends Activity implements View.OnClickListener
 {
-	Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bequals,bplus,bsubtract,bmultiply,bdivide,bdel,bdot;
+	Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bequals,bplus,bsubtract,bmultiply,bdivide,bdel,bdot,bclear;
 	TextView res;
 	String str;
 	int p=0,k=0;
@@ -42,7 +42,7 @@ public class CalculatorBasic extends Activity implements View.OnClickListener
 		bdel.setOnClickListener(this);
 		bequals.setOnClickListener(this);
 		bdot.setOnClickListener(this);
-		
+		bclear.setOnClickListener(this);
 	}
 
 	private void initialise() 
@@ -67,6 +67,7 @@ public class CalculatorBasic extends Activity implements View.OnClickListener
 		bdel=(Button)findViewById(R.id.button_calc_b_del);
 		bdot=(Button)findViewById(R.id.button_calc_b_dot);
 		res=(TextView)findViewById(R.id.textView_calc_b_screen);
+		bclear=(Button)findViewById(R.id.button_calc_b_clearAll);
 	}
 
 	@Override
@@ -117,8 +118,11 @@ public class CalculatorBasic extends Activity implements View.OnClickListener
 			break;
 		case R.id.button_calc_b_divide:
 			if(isallowed==1)
-			str+="/";
-			isallowed=0;
+			{str+="/";
+			isallowed=0;}
+			else if(isallowed==0 && res.getText().toString()!="")
+			{str=str.substring(0,str.length()-1)+"/";
+			}
 			break;
 		case R.id.button_calc_b_equal:
 			if(isallowed==1)
@@ -127,21 +131,31 @@ public class CalculatorBasic extends Activity implements View.OnClickListener
 			break;
 		case R.id.button_calc_b_multiply:
 			if(isallowed==1)
-			str+="*";
-			isallowed=0;
+			{str+="*";
+			isallowed=0;}
+			else if(isallowed==0 && res.getText().toString()!="")
+			{str=str.substring(0,str.length()-1)+"*";
+			}
 			break;
 		case R.id.button_calc_b_plus:
 			if(isallowed==1)
-			str+="+";
-			isallowed=0;
+			{str+="+";
+			isallowed=0;}
+			else if(isallowed==0 && res.getText().toString()!="")
+			{str=str.substring(0,str.length()-1)+"+";
+			}
 			break;
 		case R.id.button_calc_b_subtract:
 			if(isallowed==1)
-			str+="-";
-			isallowed=0;
+			{str+="-";
+			isallowed=0;}
+			else if(isallowed==0 && res.getText().toString()!="")
+			{str=str.substring(0,str.length()-1)+"-";
+			}
 			break;
 		case R.id.button_calc_b_dot:
 			str+=".";
+			isallowed=0;
 			break;
 		case R.id.button_calc_b_del:
 			if(str.length()!=0)
@@ -150,6 +164,9 @@ public class CalculatorBasic extends Activity implements View.OnClickListener
 				if(isallowed==0)
 					isallowed=1;
 			}
+			break;
+		case R.id.button_calc_b_clearAll:
+			str="";
 			break;
 			
 		}
@@ -164,7 +181,20 @@ public class CalculatorBasic extends Activity implements View.OnClickListener
 		double values[]=new double[10];
 		char ch[]=new char[10];
 		int i=0;
-		for(i=0;i<str.length();i++)
+		if(str.charAt(i)=='-')
+		{
+			i++;
+			while((str.charAt(i)>='0' && str.charAt(i)<='9')|| str.charAt(i)=='.')
+				i++;
+			values[k]=Double.parseDouble(str.substring(1, i));
+			values[k]*=-1.0;
+			ch[k]=(char)(97+k);
+			s=s+ch[k]+str.charAt(i);
+			k++;
+			p=i+1;
+			i++;
+		}
+		for(;i<str.length();i++)
 		{
 			
 			if(str.charAt(i)=='+' || str.charAt(i)=='-'|| str.charAt(i)=='*' || str.charAt(i)=='/')

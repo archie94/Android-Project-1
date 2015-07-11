@@ -33,6 +33,16 @@
         </LinearLayout>
     </ScrollView>
 
+    <EditText
+        android:id="@+id/memo_editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+    
     <Button
         android:id="@+id/memo_addMore"
         style="?android:attr/buttonStyleSmall"
@@ -40,7 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="+"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_weight="5" />
 
 "
 

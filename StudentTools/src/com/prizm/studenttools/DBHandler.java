@@ -13,10 +13,9 @@ public class DBHandler extends SQLiteOpenHelper
 {
 	private static final int databaseversion=1;
 	private static final String filename="ST.db";
-	private static final String table1="memo";
-	private static final String table1_col_id="_id";
-	private static final String table1_col_todo="todo";
-	
+	public static final String table1="memo";
+	public static final String table1_col_id="_id";
+	public static final String table1_col_todo="todo";
 	public DBHandler(Context context, String name, CursorFactory factory,int version) 
 	{
 		super(context, filename, factory, databaseversion);
@@ -36,7 +35,7 @@ public class DBHandler extends SQLiteOpenHelper
 	public void onUpgrade(SQLiteDatabase arg0, int arg1, int arg2) 
 	{
 		// TODO Auto-generated method stub
-		arg0.execSQL("DROP TABLE IF EXISTS "+table1);
+		arg0.execSQL("DROP TABLE IF EXISTS "+table1);//check this too
 		onCreate(arg0);
 	}
 	
@@ -52,22 +51,23 @@ public class DBHandler extends SQLiteOpenHelper
 	{
 		SQLiteDatabase db = getWritableDatabase();
 		db.execSQL("DELETE FROM "+table1+" WHERE "+table1_col_todo+"="+"\""+item+"\";");
-		db.close();
+		db.close();//check 
 	}
 	public String dtabasetoString()
 	{
 		SQLiteDatabase db = getWritableDatabase();
 		String dbString="";
-		String query="SELECT * FROM "+table1+" WHERE 1;";
+		String query="SELECT * FROM "+table1+" WHERE 1";//check 
 		Cursor c=db.rawQuery(query, null);
 		c.moveToFirst();
 		while(!c.isAfterLast())
 		{
-			if(c.getString(c.getColumnIndex(table1_col_todo))!=null)
+			if(c.getString(c.getColumnIndex("todo"))!=null)
 			{
-				dbString+=c.getString(c.getColumnIndex(table1_col_todo));
+				dbString+=c.getString(c.getColumnIndex("todo"));
 				dbString+="\n";
 			}
+			c.moveToNext();
 		}
 		db.close();
 		return dbString;

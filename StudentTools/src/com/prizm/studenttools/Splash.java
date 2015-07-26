@@ -17,14 +17,13 @@ public class Splash extends Activity
 		setContentView(R.layout.splash);
 		
 		
-		//it is good habit to create the ourSong variable below the setContentView(); -- ??
 		
 		
 		
 		//SoundPool class can be used for small clips like gun shots etc 
 		//MediaPlayer is used for background music etc 
 		ourSong = MediaPlayer.create(Splash.this, R.raw.splashsound);
-		//Splah.this refers to the context of Splash class
+		//Splash.this refers to the context of Splash class
 		ourSong.start();
 		
 		

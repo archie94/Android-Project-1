@@ -1,6 +1,7 @@
 package com.prizm.studenttools;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -9,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 
-public class Memo extends Activity implements View.OnClickListener
+public class Memo extends ListActivity implements View.OnClickListener
 {
 	Button add;
 	String memos[];
@@ -75,7 +76,12 @@ public class Memo extends Activity implements View.OnClickListener
 		// TODO Auto-generated method stub
 		str="";
 		//memos=new String[100];
-		lv1=(ListView)findViewById(R.id.memo_listView1);
+		//lv1=(ListView)findViewById(R.id.memo_listView1);
+		/* Changed the id from memo_listView1 to android:id/list since we are using ListActivity class now 
+		 * the definition of lv1 variable has also changed from lv1=(ListView)findViewById(R.id.memo_listView1);
+		 * to lv1=(ListView)findViewById(android.R.id.list); 
+		 */
+		lv1=(ListView)findViewById(android.R.id.list);
 		add=(Button)findViewById(R.id.memo_addMore);
 		et=(EditText)findViewById(R.id.memo_editText1);
 		handler=new DBHandler(this,null,null,1);
@@ -102,5 +108,14 @@ public class Memo extends Activity implements View.OnClickListener
 			e.printStackTrace();
 		}
 	}
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) 
+	{
+		// TODO Auto-generated method stub
+		super.onListItemClick(l, v, position, id);
+		handler.deleteRow(memos[position]);
+		printDataBase();
+	}
 
+	
 }

@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="18" />
   
     <application
@@ -102,6 +102,16 @@
             android:label="@string/app_name" >
             <intent-filter> 
                 <action android:name="com.prizm.studenttools.MEMO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>    
+        </activity>
+        
+        <activity
+            android:name="com.prizm.studenttools.Determinant"
+            android:label="@string/app_name" >
+            <intent-filter> 
+                <action android:name="com.prizm.studenttools.DETERMINANT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>    

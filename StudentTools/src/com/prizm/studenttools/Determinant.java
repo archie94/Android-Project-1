@@ -2,9 +2,11 @@ package com.prizm.studenttools;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.EditText;
 
 public class Determinant extends Activity 
 {
+	EditText edt1;
 	
 
 	@Override
@@ -12,6 +14,8 @@ public class Determinant extends Activity
 	{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.deteminant);
+		
 	}
 	
 	

@@ -113,7 +113,8 @@ public class Memo extends ListActivity implements View.OnClickListener
 	{
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
-		handler.deleteRow(memos[position]);
+		//handler.deleteRow(memos[position]);
+		
 		printDataBase();
 	}
 

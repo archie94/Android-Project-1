@@ -3,11 +3,14 @@ package com.prizm.studenttools;
 //import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 
 public class Memo extends ListActivity implements View.OnClickListener
@@ -114,6 +117,23 @@ public class Memo extends ListActivity implements View.OnClickListener
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
 		//handler.deleteRow(memos[position]);
+		// Creating instance of PopupMenu
+		PopupMenu popup = new PopupMenu(Memo.this,add);
+		// inflate the menu with xml file 
+		popup.getMenuInflater().inflate(R.menu.popup_menu,popup.getMenu());
+		// register popup with OnMenuItemClickListener
+		popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() 
+		{
+			
+			@Override
+			public boolean onMenuItemClick(MenuItem item) {
+				// TODO Auto-generated method stub
+				Toast.makeText(Memo.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
+				return true;
+			}
+		});
+		// show popup menu 
+		popup.show();
 		
 		printDataBase();
 	}

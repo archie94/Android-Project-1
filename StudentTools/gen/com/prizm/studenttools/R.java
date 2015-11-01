@@ -73,10 +73,11 @@ public final class R {
         public static final int memo_addMore=0x7f09001c;
         public static final int memo_editText1=0x7f09001b;
         public static final int memo_textView=0x7f09001a;
-        public static final int popup_delete=0x7f090040;
-        public static final int popup_pHigh=0x7f09003d;
-        public static final int popup_pLow=0x7f09003f;
-        public static final int popup_pMedium=0x7f09003e;
+        public static final int popup_delete=0x7f090041;
+        public static final int popup_edit=0x7f09003d;
+        public static final int popup_pHigh=0x7f09003e;
+        public static final int popup_pLow=0x7f090040;
+        public static final int popup_pMedium=0x7f09003f;
         public static final int textView_3Result1=0x7f09002c;
         public static final int textView_3Result2=0x7f09002d;
         public static final int textView_3Result3=0x7f09002e;

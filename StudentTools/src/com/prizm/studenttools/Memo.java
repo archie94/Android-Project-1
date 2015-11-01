@@ -112,11 +112,10 @@ public class Memo extends ListActivity implements View.OnClickListener
 		}
 	}
 	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) 
+	protected void onListItemClick(ListView l, View v, final int position, long id) 
 	{
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
-		//handler.deleteRow(memos[position]);
 		// Creating instance of PopupMenu
 		PopupMenu popup = new PopupMenu(Memo.this,add);
 		// inflate the menu with xml file 
@@ -128,7 +127,10 @@ public class Memo extends ListActivity implements View.OnClickListener
 			@Override
 			public boolean onMenuItemClick(MenuItem item) {
 				// TODO Auto-generated method stub
-				Toast.makeText(Memo.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
+				if(item.getTitle().equals("Delete"))
+					handler.deleteRow(memos[position]);
+					Toast.makeText(Memo.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
+					
 				return true;
 			}
 		});

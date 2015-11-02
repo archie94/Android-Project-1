@@ -26,6 +26,14 @@
         android:layout_weight="90" >
     </ListView>
 
+    <!--   Dummy item to prevent Edit Text  from receiving focus -->
+    <LinearLayout
+    
+    		android:focusable="true" 
+    		android:focusableInTouchMode="true"
+    		android:layout_width="0px" 
+    		android:layout_height="0px"
+    	/>
     <EditText
         android:id="@+id/memo_editText1"
         android:layout_width="match_parent"
@@ -33,7 +41,7 @@
         android:layout_weight="5"
         android:ems="10" >
 
-        <requestFocus />
+        <!--   <requestFocus /> -->
     </EditText>
     
     <Button

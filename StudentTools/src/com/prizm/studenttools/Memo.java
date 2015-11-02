@@ -99,6 +99,7 @@ public class Memo extends ListActivity implements View.OnClickListener
 			switch(arg0.getId())
 			{
 			case R.id.memo_addMore:
+				str=et.getText().toString();
 				addDataBase();
 				break;
 			case R.id.memo_editText1:

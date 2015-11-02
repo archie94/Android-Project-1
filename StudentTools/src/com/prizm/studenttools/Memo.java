@@ -3,14 +3,18 @@ package com.prizm.studenttools;
 //import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.TextView.OnEditorActionListener;
 
 
 public class Memo extends ListActivity implements View.OnClickListener
@@ -30,6 +34,24 @@ public class Memo extends ListActivity implements View.OnClickListener
 		initialise();
 		et.setOnClickListener(this);
 		add.setOnClickListener(this);
+		et.setOnEditorActionListener(new OnEditorActionListener() 
+		{
+
+			boolean handled=false;
+			@Override
+			public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) 
+			{
+				// TODO Auto-generated method stub
+				if(actionId == EditorInfo.IME_ACTION_DONE)
+				{
+					str=et.getText().toString();
+					addDataBase();
+					handled=true;
+				}
+				return handled;
+			}
+			
+		});
 		printDataBase();
 	}
 	private void addDataBase()

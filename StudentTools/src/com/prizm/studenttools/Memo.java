@@ -78,7 +78,6 @@ public class Memo extends ListActivity implements View.OnClickListener
 	{
 		// TODO Auto-generated method stub
 		str="";
-		//memos=new String[100];
 		//lv1=(ListView)findViewById(R.id.memo_listView1);
 		/* Changed the id from memo_listView1 to android:id/list since we are using ListActivity class now 
 		 * the definition of lv1 variable has also changed from lv1=(ListView)findViewById(R.id.memo_listView1);

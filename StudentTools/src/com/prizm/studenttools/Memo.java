@@ -147,7 +147,8 @@ public class Memo extends ListActivity implements View.OnClickListener
 		{
 			
 			@Override
-			public boolean onMenuItemClick(MenuItem item) {
+			public boolean onMenuItemClick(MenuItem item) 
+			{
 				// TODO Auto-generated method stub
 				if(item.getTitle().equals("Delete"))
 					handler.deleteRow(memos[position]);

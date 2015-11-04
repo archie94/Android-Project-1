@@ -53,6 +53,10 @@ public class DBHandler extends SQLiteOpenHelper
 		db.execSQL("DELETE FROM "+table1+" WHERE "+table1_col_todo+"="+"\""+item+"\";");
 		db.close();//check 
 	}
+	public void updateRow(String item)
+	{
+		
+	}
 	public String dtabasetoString()
 	{
 		SQLiteDatabase db = getWritableDatabase();

@@ -26,6 +26,7 @@ public class Memo extends ListActivity implements View.OnClickListener
 	String str;
 	EditText et;
 	DBHandler handler;
+	int pos ; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -139,6 +140,7 @@ public class Memo extends ListActivity implements View.OnClickListener
 	{
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
+		pos = position ; 
 		// Creating instance of PopupMenu
 		PopupMenu popup = new PopupMenu(Memo.this,add);
 		// inflate the menu with xml file 
@@ -157,6 +159,7 @@ public class Memo extends ListActivity implements View.OnClickListener
 				}
 				else if(item.getTitle().equals("View / Edit"))
 				{
+					Toast.makeText(Memo.this,"Position = " +pos,Toast.LENGTH_SHORT).show();
 					Intent newIntent = new Intent(Memo.this,MemoView.class);
 					newIntent.putExtra("memo",memos[position]);
 					startActivity(newIntent);
@@ -171,6 +174,19 @@ public class Memo extends ListActivity implements View.OnClickListener
 		
 		printDataBase();
 	}
+	@Override
+	protected void onNewIntent(Intent intent) 
+	{
+		// TODO Auto-generated method stub
+		super.onNewIntent(intent);
+		setIntent(intent);
+		String s = getIntent().getExtras().getString("memoback");
+		Toast.makeText(Memo.this,"Returned with "+pos+" value "+ s,Toast.LENGTH_SHORT).show();
+		
+
+	}
+	
+	
 
 	
 }

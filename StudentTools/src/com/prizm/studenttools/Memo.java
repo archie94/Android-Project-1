@@ -59,7 +59,7 @@ public class Memo extends ListActivity implements View.OnClickListener
 	private void addDataBase()
 	{
 		// add a row to the database 
-		if(str!="")
+		if(str.length()>0)
 		{
 			//add a row only if a valid memo is given as input . 
 			MemoGetter m=new MemoGetter(str);

@@ -2,6 +2,7 @@ package com.prizm.studenttools;
 
 //import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -13,8 +14,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
+import android.widget.Toast;
 
 
 public class Memo extends ListActivity implements View.OnClickListener
@@ -151,7 +152,15 @@ public class Memo extends ListActivity implements View.OnClickListener
 			{
 				// TODO Auto-generated method stub
 				if(item.getTitle().equals("Delete"))
+				{
 					handler.deleteRow(memos[position]);
+				}
+				else if(item.getTitle().equals("View / Edit"))
+				{
+					Intent newIntent = new Intent(Memo.this,MemoView.class);
+					newIntent.putExtra("memo",memos[position]);
+					startActivity(newIntent);
+				}
 					Toast.makeText(Memo.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
 					
 				return true;

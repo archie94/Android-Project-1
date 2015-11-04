@@ -1,6 +1,7 @@
 package com.prizm.studenttools;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -31,7 +32,6 @@ public class MemoView extends Activity
 		{
 			str = bundle.getString("memo");
 			memo.setText(str,TextView.BufferType.EDITABLE);
-			
 		}
 		catch(Exception e )
 		{
@@ -70,6 +70,9 @@ public class MemoView extends Activity
 	private void editMemo()
 	{
 		str=memo.getText().toString();
+		Intent i = new Intent (MemoView.this,Memo.class);
+		i.putExtra("memoback", str);
+		startActivity(i);
 	}
 	
 	

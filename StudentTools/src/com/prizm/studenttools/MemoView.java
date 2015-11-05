@@ -12,7 +12,6 @@ import android.widget.TextView.OnEditorActionListener;
 public class MemoView extends Activity  
 {
 	EditText memo ; 
-	String str;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -25,8 +24,7 @@ public class MemoView extends Activity
 		Bundle bundle = getIntent().getExtras();
 		try
 		{
-			str = bundle.getString("memo");
-			memo.setText(str,TextView.BufferType.EDITABLE);
+			memo.setText(bundle.getString("memo"),TextView.BufferType.EDITABLE);
 		}
 		catch(Exception e )
 		{
@@ -54,9 +52,8 @@ public class MemoView extends Activity
 	}
 	private void editMemo()
 	{
-		str=memo.getText().toString();
 		Intent i = new Intent (MemoView.this,Memo.class);
-		i.putExtra("memoback", str);
+		i.putExtra("memoback", memo.getText().toString());
 		startActivity(i);
 	}
 	

@@ -190,9 +190,8 @@ public class Memo extends ListActivity implements View.OnClickListener
 	private void updateDataBase() 
 	{
 		// TODO Auto-generated method stub
-		String s1 = getIntent().getExtras().getString("memoback");
-		String s2 = memos[pos];
-		handler.updateRow(s1, s2);
+		
+		handler.updateRow(getIntent().getExtras().getString("memoback"), memos[pos]);
 		printDataBase();
 	}
 	@Override
@@ -200,11 +199,10 @@ public class Memo extends ListActivity implements View.OnClickListener
 	{
 		// TODO Auto-generated method stub
 		super.onWindowFocusChanged(hasFocus);
-		int height = add.getHeight();
-		int width = add.getWidth();
+		
 		
 		Bitmap bitmapAdd = BitmapFactory.decodeResource(getResources(), R.drawable.add_icon);
-		bitmapAdd = Bitmap.createScaledBitmap(bitmapAdd, width, height, true);
+		bitmapAdd = Bitmap.createScaledBitmap(bitmapAdd, add.getWidth(), add.getHeight(), true);
 		Resources r1=getResources();
 		add.setBackground(new BitmapDrawable(r1,bitmapAdd));
 	}

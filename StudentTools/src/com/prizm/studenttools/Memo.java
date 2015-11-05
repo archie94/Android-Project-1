@@ -3,6 +3,10 @@ package com.prizm.studenttools;
 //import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -191,6 +195,19 @@ public class Memo extends ListActivity implements View.OnClickListener
 		String s2 = memos[pos];
 		handler.updateRow(s1, s2);
 		printDataBase();
+	}
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus) 
+	{
+		// TODO Auto-generated method stub
+		super.onWindowFocusChanged(hasFocus);
+		int height = add.getHeight();
+		int width = add.getWidth();
+		
+		Bitmap bitmapAdd = BitmapFactory.decodeResource(getResources(), R.drawable.add_icon);
+		bitmapAdd = Bitmap.createScaledBitmap(bitmapAdd, width, height, true);
+		Resources r1=getResources();
+		add.setBackground(new BitmapDrawable(r1,bitmapAdd));
 	}
 	
 	

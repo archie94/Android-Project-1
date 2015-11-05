@@ -39,6 +39,11 @@ public class Memo extends ListActivity implements View.OnClickListener
 		initialise();
 		et.setOnClickListener(this);
 		add.setOnClickListener(this);
+		/*
+		 * Finish entering the memo when 
+		 * "DONE" button is tapped 
+		 * also add the memo to database 
+		 */
 		et.setOnEditorActionListener(new OnEditorActionListener() 
 		{
 
@@ -105,7 +110,6 @@ public class Memo extends ListActivity implements View.OnClickListener
 	{
 		// TODO Auto-generated method stub
 		str="";
-		//lv1=(ListView)findViewById(R.id.memo_listView1);
 		/* Changed the id from memo_listView1 to android:id/list since we are using ListActivity class now 
 		 * the definition of lv1 variable has also changed from lv1=(ListView)findViewById(R.id.memo_listView1);
 		 * to lv1=(ListView)findViewById(android.R.id.list); 
@@ -138,6 +142,8 @@ public class Memo extends ListActivity implements View.OnClickListener
 			e.printStackTrace();
 		}
 	}
+	
+	
 	@Override
 	protected void onListItemClick(ListView l, View v, final int position, long id) 
 	{
@@ -148,7 +154,7 @@ public class Memo extends ListActivity implements View.OnClickListener
 		PopupMenu popup = new PopupMenu(Memo.this,add);
 		// inflate the menu with xml file 
 		popup.getMenuInflater().inflate(R.menu.popup_menu,popup.getMenu());
-		// register popup with OnMenuItemClickListener
+		// register pop up with OnMenuItemClickListener
 		popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() 
 		{
 			
@@ -158,10 +164,12 @@ public class Memo extends ListActivity implements View.OnClickListener
 				// TODO Auto-generated method stub
 				if(item.getTitle().equals("Delete"))
 				{
+					// delete the current memo 
 					handler.deleteRow(memos[position]);
 				}
 				else if(item.getTitle().equals("View / Edit"))
 				{
+					// start a new activity MemoView in which we edit our memo 
 					Toast.makeText(Memo.this,"Position = " +pos,Toast.LENGTH_SHORT).show();
 					Intent newIntent = new Intent(Memo.this,MemoView.class);
 					newIntent.putExtra("memo",memos[position]);
@@ -177,29 +185,42 @@ public class Memo extends ListActivity implements View.OnClickListener
 		
 		printDataBase();
 	}
+	
+	
 	@Override
 	protected void onNewIntent(Intent intent) 
 	{
 		// TODO Auto-generated method stub
 		super.onNewIntent(intent);
+		/*
+		 * When this activity is re-launched
+		 * we set the new intent and update our database 
+		 * with the new memo replacing the old one  
+		 */
 		setIntent(intent);
 		String s = getIntent().getExtras().getString("memoback");
 		Toast.makeText(Memo.this,"Returned with "+pos+" value "+ s,Toast.LENGTH_SHORT).show();
 		updateDataBase();
 	}
+	
+	
 	private void updateDataBase() 
 	{
 		// TODO Auto-generated method stub
-		
+		// update row of the database 
 		handler.updateRow(getIntent().getExtras().getString("memoback"), memos[pos]);
 		printDataBase();
 	}
+	
+	
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus) 
 	{
 		// TODO Auto-generated method stub
 		super.onWindowFocusChanged(hasFocus);
-		
+		/*
+		 * Add a background image to the ADD button 
+		 */
 		
 		Bitmap bitmapAdd = BitmapFactory.decodeResource(getResources(), R.drawable.add_icon);
 		bitmapAdd = Bitmap.createScaledBitmap(bitmapAdd, add.getWidth(), add.getHeight(), true);

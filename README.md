@@ -6,7 +6,8 @@ Main purpose of this app is to provide all needy tools of any engineering studen
 Basic Layout Completed 
 - Calculator 
 - Equation Solver (2 variable and 3 variable )
+- Memo Pad 
 
 ###TODO 
 - Change text colour of listview items in memeo.java
-
+- Create a widget for the memo activity 

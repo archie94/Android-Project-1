@@ -92,13 +92,13 @@ public class Memo extends ListActivity implements View.OnClickListener
 			}
 		}
 		memos=new String[counter];//we have total no of present string 
-		counter=0;
+		counter--;
 		p=0;
 		for(i=0;i<dbString.length();i++)
 		{
 			if(dbString.charAt(i)=='\n')
 			{
-				memos[counter++]=dbString.substring(p, i);//store each individual memo into a string
+				memos[counter--]=dbString.substring(p, i);//store each individual memo into a string
 				p=i+1;
 			}
 		}

@@ -81,5 +81,17 @@ public class MemoView extends Activity
 		finish();
 	}
 	
+	@Override
+	public boolean onKeyUp(int keyCode, KeyEvent event) 
+	{
+		// TODO Auto-generated method stub
+		if(keyCode == KeyEvent.KEYCODE_BACK)
+		{
+			Intent i = new Intent (MemoView.this,Memo.class);
+			i.putExtra("memoback", memo.getText().toString());
+			startActivity(i);
+		}
+		return super.onKeyUp(keyCode, event);
+	}
 
 }

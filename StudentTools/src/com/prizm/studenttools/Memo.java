@@ -248,6 +248,8 @@ public class Memo extends ListActivity implements View.OnClickListener
 	}
 	
 	
+	
+	
 
 	
 }

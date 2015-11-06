@@ -175,6 +175,18 @@ public class Memo extends ListActivity implements View.OnClickListener
 					newIntent.putExtra("memo",memos[position]);
 					startActivity(newIntent);
 				}
+				else if(item.getTitle().equals("Priority high"))
+				{
+					changeTextColour("red");
+				}
+				else if(item.getTitle().equals("Priority medium"))
+				{
+					changeTextColour("green");
+				}
+				else if(item.getTitle().equals("Priority low"))
+				{
+					changeTextColour("yellow");
+				}
 					Toast.makeText(Memo.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
 					
 				return true;
@@ -186,6 +198,13 @@ public class Memo extends ListActivity implements View.OnClickListener
 		printDataBase();
 	}
 	
+	
+	protected void changeTextColour(String string) 
+	{
+		// TODO Auto-generated method stub
+		// Here we change the text colour of our list view elements 
+		
+	}
 	
 	@Override
 	protected void onNewIntent(Intent intent) 

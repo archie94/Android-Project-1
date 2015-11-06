@@ -166,6 +166,7 @@ public class Memo extends ListActivity implements View.OnClickListener
 				{
 					// delete the current memo 
 					handler.deleteRow(memos[position]);
+					printDataBase();
 				}
 				else if(item.getTitle().equals("View / Edit"))
 				{
@@ -250,9 +251,5 @@ public class Memo extends ListActivity implements View.OnClickListener
 		add.setBackground(new BitmapDrawable(r1,bitmapAdd));
 	}
 	
-	
-	
-	
-
 	
 }

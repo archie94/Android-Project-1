@@ -97,7 +97,7 @@ public final class R {
     }
     public static final class layout {
         public static final int calculator_basic=0x7f030000;
-        public static final int custom_list1=0x7f030001;
+        public static final int custom_list1_row=0x7f030001;
         public static final int deteminant=0x7f030002;
         public static final int gpa=0x7f030003;
         public static final int memo=0x7f030004;

@@ -219,7 +219,10 @@ public class Memo extends ListActivity implements View.OnClickListener
 		setIntent(intent);
 		String s = getIntent().getExtras().getString("memoback");
 		Toast.makeText(Memo.this,"Returned with "+pos+" value "+ s,Toast.LENGTH_SHORT).show();
+		if(s.length()>0)
 		updateDataBase();
+		else
+		printDataBase();
 	}
 	
 	

@@ -88,7 +88,7 @@ public class MemoView extends Activity
 		if(keyCode == KeyEvent.KEYCODE_BACK)
 		{
 			Intent i = new Intent (MemoView.this,Memo.class);
-			i.putExtra("memoback", memo.getText().toString());
+			i.putExtra("memoback", "");
 			startActivity(i);
 		}
 		return super.onKeyUp(keyCode, event);

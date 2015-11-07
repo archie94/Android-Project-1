@@ -182,11 +182,11 @@ public class Memo extends ListActivity implements View.OnClickListener
 				}
 				else if(item.getTitle().equals("Priority medium"))
 				{
-					changeTextColour("green");
+					changeTextColour("black");
 				}
 				else if(item.getTitle().equals("Priority low"))
 				{
-					changeTextColour("yellow");
+					changeTextColour("green");
 				}
 					Toast.makeText(Memo.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
 					

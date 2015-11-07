@@ -29,8 +29,9 @@ public class WidgetMemo extends AppWidgetProvider
 			}
 		}
 		
-		String memo[]=new String[3];
-		counter=2;
+		String memo[]=new String[counter];
+		int num = counter;
+		counter--;
 		p=0;
 		for(i=0;i<dbString.length();i++)
 		{
@@ -45,10 +46,34 @@ public class WidgetMemo extends AppWidgetProvider
 		{
 			int appWidgetId = appWidgetIds[i];
 			RemoteViews v =new RemoteViews(context.getPackageName(), R.layout.widget_memo_layout);
-			v.setTextViewText(R.id.widget_memo_layout_firstTV, memo[0]);
-			v.setTextViewText(R.id.widget_memo_layout_secondTV, memo[1]);
-			v.setTextViewText(R.id.widget_memo_layout_thirdTV, memo[2]);
-			appWidgetManager.updateAppWidget(appWidgetId, v);
+			if(num>3)
+			{
+				v.setTextViewText(R.id.widget_memo_layout_firstTV, memo[0]);
+				v.setTextViewText(R.id.widget_memo_layout_secondTV, memo[1]);
+				v.setTextViewText(R.id.widget_memo_layout_thirdTV, memo[2]);
+				appWidgetManager.updateAppWidget(appWidgetId, v);
+			}
+			else if(num==2)
+			{
+				v.setTextViewText(R.id.widget_memo_layout_firstTV, memo[0]);
+				v.setTextViewText(R.id.widget_memo_layout_secondTV, memo[1]);
+				v.setTextViewText(R.id.widget_memo_layout_thirdTV, "");
+				appWidgetManager.updateAppWidget(appWidgetId, v);
+			}
+			else if(num==1)
+			{
+				v.setTextViewText(R.id.widget_memo_layout_firstTV, memo[0]);
+				v.setTextViewText(R.id.widget_memo_layout_secondTV, "");
+				v.setTextViewText(R.id.widget_memo_layout_thirdTV, "");
+				appWidgetManager.updateAppWidget(appWidgetId, v);
+			}
+			else if(num==0)
+			{
+				v.setTextViewText(R.id.widget_memo_layout_firstTV, "");
+				v.setTextViewText(R.id.widget_memo_layout_secondTV, "");
+				v.setTextViewText(R.id.widget_memo_layout_thirdTV, "");
+				appWidgetManager.updateAppWidget(appWidgetId, v);
+			}
 		}
 		
 	}

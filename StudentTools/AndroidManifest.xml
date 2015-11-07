@@ -141,6 +141,14 @@
             
         </receiver>
         
+        <activity
+            android:name=".WidgetMemoConfig"
+            android:label="@string/app_name" >
+            <intent-filter> 
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>    
+        </activity>
+        
         
     </application>
 

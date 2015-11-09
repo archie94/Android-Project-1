@@ -11,3 +11,4 @@ Basic Layout Completed
 ###TODO 
 - Change text colour of listview items in memeo.java
 - Create a widget for the memo activity 
+- Add a alarm for each memo in memo pad

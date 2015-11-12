@@ -46,7 +46,7 @@ public class WidgetMemo extends AppWidgetProvider
 		{
 			int appWidgetId = appWidgetIds[i];
 			RemoteViews v =new RemoteViews(context.getPackageName(), R.layout.widget_memo_layout);
-			if(num>3)
+			if(num>=3)
 			{
 				v.setTextViewText(R.id.widget_memo_layout_firstTV, memo[0]);
 				v.setTextViewText(R.id.widget_memo_layout_secondTV, memo[1]);

@@ -9,8 +9,4 @@ Basic Layout Completed
 - Memo Pad 
 
 ###TODO 
-- Change text colour of listview items in memeo.java
-- Create a widget for the memo activity 
-- Add a alarm for each memo in memo pad
-- Group memos 
-- Add a check box for each memo and show percentage of checked in a top status bar 
+See the TODO.txt file 

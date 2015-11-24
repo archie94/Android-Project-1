@@ -3,6 +3,10 @@ package com.prizm.studenttools;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -90,5 +94,7 @@ public class WidgetMemo extends AppWidgetProvider
 		super.onDeleted(context, appWidgetIds);
 		Toast.makeText(context, "Widget Removed", Toast.LENGTH_SHORT).show();
 	}
+	
+	
 
 }

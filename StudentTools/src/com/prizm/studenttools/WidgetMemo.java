@@ -46,6 +46,11 @@ public class WidgetMemo extends AppWidgetProvider
 		{
 			int appWidgetId = appWidgetIds[i];
 			RemoteViews v =new RemoteViews(context.getPackageName(), R.layout.widget_memo_layout);
+			/*
+			 * Set the  3 latest memos in our widget view 
+			 * If total no of memos is less than 3 then set 
+			 * the other text views to a null string 
+			 */
 			if(num>=3)
 			{
 				v.setTextViewText(R.id.widget_memo_layout_firstTV, memo[0]);

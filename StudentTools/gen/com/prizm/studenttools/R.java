@@ -26,7 +26,7 @@ public final class R {
         public static final int splash_background=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0042;
+        public static final int action_settings=0x7f0a0043;
         public static final int button_calc_b_0=0x7f0a0012;
         public static final int button_calc_b_1=0x7f0a000e;
         public static final int button_calc_b_2=0x7f0a000d;
@@ -76,11 +76,11 @@ public final class R {
         public static final int memo_editText1=0x7f0a001c;
         public static final int memo_textView=0x7f0a001b;
         public static final int memo_view_editText1=0x7f0a001e;
-        public static final int popup_delete=0x7f0a0047;
-        public static final int popup_edit=0x7f0a0043;
-        public static final int popup_pHigh=0x7f0a0044;
-        public static final int popup_pLow=0x7f0a0046;
-        public static final int popup_pMedium=0x7f0a0045;
+        public static final int popup_delete=0x7f0a0048;
+        public static final int popup_edit=0x7f0a0044;
+        public static final int popup_pHigh=0x7f0a0045;
+        public static final int popup_pLow=0x7f0a0047;
+        public static final int popup_pMedium=0x7f0a0046;
         public static final int textView1=0x7f0a003e;
         public static final int textView_3Result1=0x7f0a002e;
         public static final int textView_3Result2=0x7f0a002f;
@@ -95,9 +95,10 @@ public final class R {
         public static final int textView_two_x1=0x7f0a0032;
         public static final int textView_two_y1=0x7f0a0034;
         public static final int textView_two_y2=0x7f0a0039;
-        public static final int widget_memo_layout_firstTV=0x7f0a003f;
-        public static final int widget_memo_layout_secondTV=0x7f0a0040;
-        public static final int widget_memo_layout_thirdTV=0x7f0a0041;
+        public static final int widget_memo_layout_firstTV=0x7f0a0040;
+        public static final int widget_memo_layout_secondTV=0x7f0a0041;
+        public static final int widget_memo_layout_thirdTV=0x7f0a0042;
+        public static final int widget_memo_linear_layout=0x7f0a003f;
     }
     public static final class layout {
         public static final int calculator_basic=0x7f030000;

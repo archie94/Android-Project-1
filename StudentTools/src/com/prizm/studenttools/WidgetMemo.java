@@ -1,12 +1,10 @@
 package com.prizm.studenttools;
 
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
+import android.content.Intent;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -83,7 +81,13 @@ public class WidgetMemo extends AppWidgetProvider
 				v.setTextViewText(R.id.widget_memo_layout_thirdTV, "");
 				appWidgetManager.updateAppWidget(appWidgetId, v);
 			}
+			
+			Intent launchApp = new Intent(context, Memo.class);
+			PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, launchApp, 0);
+			v.setOnClickPendingIntent(R.id.widget_memo_linear_layout, pendingIntent);
+			appWidgetManager.updateAppWidget(appWidgetId, v);
 		}
+		
 		
 	}
 

@@ -2,25 +2,49 @@ package com.prizm.studenttools;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class CustomList1 extends ArrayAdapter<String>
+public class CustomList1 extends BaseAdapter
 {
 	private final Context context;
-	private final String memo[];
+	private final String memoList[];
+	private CustomListInterface inter;
 
-	public CustomList1(Context context, int resource, String[] memo) 
+	public CustomList1(Context context, String[] nameList)
 	{
-		super(context, resource, memo);
-		// TODO Auto-generated constructor stub
 		this.context=context;
-		this.memo=memo;
+		this.memoList = nameList;
+	}
+	
+	@Override
+	public int getCount() 
+	{
+		// TODO Auto-generated method stub
+		return memoList.length;
+	}
+	@Override
+	public Object getItem(int position) 
+	{
+		// TODO Auto-generated method stub
+		return position ;
+	}
+	@Override
+	public long getItemId(int position) 
+	{
+		// TODO Auto-generated method stub
+		return position;
 	}
 
+	
 	class ViewHolder 
 	{
 		TextView textView;
@@ -31,7 +55,7 @@ public class CustomList1 extends ArrayAdapter<String>
 		}
 	}
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) 
+	public View getView(final int position, View convertView, ViewGroup parent) 
 	{
 		// TODO Auto-generated method stub
 		View rowView=convertView;
@@ -47,8 +71,26 @@ public class CustomList1 extends ArrayAdapter<String>
 		{
 			holder=(ViewHolder)rowView.getTag();
 		}
+		holder.textView.setText(memoList[position]);
+		rowView.setOnClickListener(new OnClickListener()
+		{
+
+			@Override
+			public void onClick(View arg0) 
+			{
+				// TODO Auto-generated method stub
+				if(inter!=null)
+				{
+					inter.onClick(position);
+				}
+			}
+		});
 		return rowView;
 	}
 	
+	public interface CustomListInterface
+	{
+		public void onClick(int position);
+	}
 	
 }

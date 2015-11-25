@@ -1,5 +1,7 @@
 package com.prizm.studenttools;
 
+import com.prizm.studenttools.CustomList1.CustomListInterface;
+
 import android.app.ListActivity;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
@@ -13,6 +15,7 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,7 +26,7 @@ import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
 
-public class Memo extends ListActivity implements View.OnClickListener
+public class Memo extends ListActivity implements View.OnClickListener, CustomListInterface
 {
 	Button add;
 	String memos[];
@@ -118,7 +121,10 @@ public class Memo extends ListActivity implements View.OnClickListener
 			}
 		}
 		//create the list activity on the basis of the strings we have collected
-		lv1.setAdapter(new ArrayAdapter<String>(Memo.this,android.R.layout.simple_list_item_1,memos));
+		//lv1.setAdapter(new ArrayAdapter<String>(Memo.this,android.R.layout.simple_list_item_1,memos));
+		lv1.setAdapter(new CustomList1(this,memos));
+		
+		
 	}
 
 	private void initialise() 
@@ -130,6 +136,7 @@ public class Memo extends ListActivity implements View.OnClickListener
 		 * to lv1=(ListView)findViewById(android.R.id.list); 
 		 */
 		lv1=(ListView)findViewById(android.R.id.list);
+		//lv1=(ListView)findViewById(R.id.customList);
 		add=(Button)findViewById(R.id.memo_addMore);
 		et=(EditText)findViewById(R.id.memo_editText1);
 		handler=new DBHandler(this,null,null,1);
@@ -269,6 +276,66 @@ public class Memo extends ListActivity implements View.OnClickListener
 		bitmapAdd = Bitmap.createScaledBitmap(bitmapAdd, add.getWidth(), add.getHeight(), true);
 		Resources r1=getResources();
 		add.setBackground(new BitmapDrawable(r1,bitmapAdd));
+	}
+	
+	
+	
+	
+	@Override
+	public void onClick(final int position) 
+	{
+		// TODO Auto-generated method stub
+		
+		
+		pos = position ; 
+		// Creating instance of PopupMenu
+		PopupMenu popup = new PopupMenu(Memo.this,add);
+		// inflate the menu with xml file 
+		popup.getMenuInflater().inflate(R.menu.popup_menu,popup.getMenu());
+		// register pop up with OnMenuItemClickListener
+		popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() 
+		{
+			
+			@Override
+			public boolean onMenuItemClick(MenuItem item) 
+			{
+				// TODO Auto-generated method stub
+				if(item.getTitle().equals("Delete"))
+				{
+					// delete the current memo 
+					handler.deleteRow(memos[position]);
+					printDataBase();
+					updateWidget(); // update widget after a deletion 
+				}
+				else if(item.getTitle().equals("View / Edit"))
+				{
+					// start a new activity MemoView in which we edit our memo 
+					Toast.makeText(Memo.this,"Position = " +pos,Toast.LENGTH_SHORT).show();
+					Intent newIntent = new Intent(Memo.this,MemoView.class);
+					newIntent.putExtra("memo",memos[position]);
+					startActivity(newIntent);
+				}
+				else if(item.getTitle().equals("Priority high"))
+				{
+					changeTextColour("red");
+				}
+				else if(item.getTitle().equals("Priority medium"))
+				{
+					changeTextColour("black");
+				}
+				else if(item.getTitle().equals("Priority low"))
+				{
+					changeTextColour("green");
+				}
+					Toast.makeText(Memo.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
+					
+				return true;
+			}
+		});
+		// show popup menu 
+		popup.show();
+		
+		printDataBase();
 	}
 	
 	

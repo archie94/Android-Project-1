@@ -75,9 +75,16 @@ public class Memo extends ListActivity implements View.OnClickListener
 			str="";
 			et.setText("");//set the edit text content back to "" after inserting it to database
 			printDataBase();//print the database after update
+			updateWidget(); // update widget after an addition to datatbase 
 		}
 	}
 
+	private void updateWidget() 
+	{
+		// TODO Auto-generated method stub
+		// call the widget to force refresh it 
+		
+	}
 	private void printDataBase() 
 	{
 		// TODO Auto-generated method stub
@@ -167,6 +174,7 @@ public class Memo extends ListActivity implements View.OnClickListener
 					// delete the current memo 
 					handler.deleteRow(memos[position]);
 					printDataBase();
+					updateWidget(); // update widget after a deletion 
 				}
 				else if(item.getTitle().equals("View / Edit"))
 				{
@@ -233,6 +241,7 @@ public class Memo extends ListActivity implements View.OnClickListener
 		// update row of the database 
 		handler.updateRow(getIntent().getExtras().getString("memoback"), memos[pos]);
 		printDataBase();
+		updateWidget(); // update widget after updating a memo  
 	}
 	
 	

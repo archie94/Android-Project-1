@@ -82,6 +82,7 @@ public class WidgetMemo extends AppWidgetProvider
 				appWidgetManager.updateAppWidget(appWidgetId, v);
 			}
 			
+			// On clicking the widget we want to launch Memo activity 
 			Intent launchApp = new Intent(context, Memo.class);
 			PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, launchApp, 0);
 			v.setOnClickPendingIntent(R.id.widget_memo_linear_layout, pendingIntent);

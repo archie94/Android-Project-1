@@ -1,6 +1,8 @@
 package com.prizm.studenttools;
 
 import android.app.ListActivity;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -83,6 +85,12 @@ public class Memo extends ListActivity implements View.OnClickListener
 	{
 		// TODO Auto-generated method stub
 		// call the widget to force refresh it 
+		AppWidgetManager man = AppWidgetManager.getInstance(this);
+	    int[] ids = man.getAppWidgetIds(new ComponentName(this,WidgetMemo.class));
+		Intent updateWidget = new Intent();
+		updateWidget.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+		updateWidget.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
+		sendBroadcast(updateWidget);
 		
 	}
 	private void printDataBase() 
@@ -226,7 +234,10 @@ public class Memo extends ListActivity implements View.OnClickListener
 		 * with the new memo replacing the old one  
 		 */
 		setIntent(intent);
-		String s = getIntent().getExtras().getString("memoback");
+		String s="";
+		if(getIntent().getExtras()!=null)
+		s = getIntent().getExtras().getString("memoback");
+		
 		Toast.makeText(Memo.this,"Returned with "+pos+" value "+ s,Toast.LENGTH_SHORT).show();
 		if(s.length()>0)
 		updateDataBase();

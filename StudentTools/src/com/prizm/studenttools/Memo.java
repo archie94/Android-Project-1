@@ -275,10 +275,11 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 		// Here we change the text colour of our list view elements 
 		if(string.equals("red"))
 			handler.updateRowPriority(m, 2);
-		else if(string.equals("red"))
+		else if(string.equals("green"))
 			handler.updateRowPriority(m, 0);
 		else 
 			handler.updateRowPriority(m, 1);
+		printDataBase();
 	}
 	
 	@Override

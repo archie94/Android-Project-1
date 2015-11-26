@@ -86,6 +86,7 @@ public class CustomList1 extends BaseAdapter
 		
 		
 		holder.textView.setText(memoList[position]);
+		holder.textView.setTextColor(Color.BLACK);
 		if(priorityList[position].equals("0"))
 			holder.textView.setTextColor(Color.GREEN);
 		else if(priorityList[position].equals("2"))

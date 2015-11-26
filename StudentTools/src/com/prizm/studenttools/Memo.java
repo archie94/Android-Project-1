@@ -15,8 +15,6 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -122,7 +120,11 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 		}
 		//create the list activity on the basis of the strings we have collected
 		//lv1.setAdapter(new ArrayAdapter<String>(Memo.this,android.R.layout.simple_list_item_1,memos));
-		lv1.setAdapter(new CustomList1(this,memos));
+		CustomList1 customList = new CustomList1(this,memos);
+		customList.setInter(this);
+		lv1.setAdapter(customList);
+		
+		//lv1.setAdapter(new CustomList1(this,memos));
 		
 		
 	}

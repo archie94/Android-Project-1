@@ -7,4 +7,5 @@ A list of features to be added in this app
 - Highlight selected memo 
 - Add a background to memo activity
 - Add proper app icon
+- Add description field in memo view 
 

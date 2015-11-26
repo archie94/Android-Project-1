@@ -28,6 +28,8 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 {
 	Button add;
 	String memos[];
+	String priorities[];
+	String checks[];
 	ListView lv1;
 	String str;
 	EditText et;
@@ -94,11 +96,16 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 		sendBroadcast(updateWidget);
 		
 	}
+	
+	
 	private void printDataBase() 
 	{
 		// TODO Auto-generated method stub
 		int counter=0;
+		int count=0;
 		String dbString = handler.dtabasetoString();
+		String dbStringP = handler.dtabasetoStringPriority();
+		String dbStringC = handler.dtabasetoStringChecked();
 		int p=0,i;
 		for(i=0;i<dbString.length();i++)
 		{
@@ -108,6 +115,9 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 			}
 		}
 		memos=new String[counter];//we have total no of present string 
+		priorities=new String[counter];
+		checks=new String[counter];
+		count=counter;
 		counter--;
 		p=0;
 		for(i=0;i<dbString.length();i++)
@@ -118,9 +128,43 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 				p=i+1;
 			}
 		}
+		counter=count;
+		counter--;
+		p=0;
+		for(i=0;i<dbStringP.length();i++)
+		{
+			if(dbStringP.charAt(i)=='\n')
+			{
+				priorities[counter--]=dbStringP.substring(p, i);//store each individual memo into a string
+				p=i+1;
+			}
+		}
+		
+		counter=count;
+		counter--;
+		p=0;
+		for(i=0;i<dbStringC.length();i++)
+		{
+			if(dbStringC.charAt(i)=='\n')
+			{
+				checks[counter--]=dbStringC.substring(p, i);//store each individual memo into a string
+				p=i+1;
+			}
+		}
+		
+		/*
+		 *  Priority 1 - normal - black
+		 *  Priority 0- low - green
+		 *  Priority 2 - high - red 
+		 *  Checked - 0 - unchecked
+		 *  Checked - 1 -checked 
+		 */
+		
+		
+		
 		//create the list activity on the basis of the strings we have collected
 		//lv1.setAdapter(new ArrayAdapter<String>(Memo.this,android.R.layout.simple_list_item_1,memos));
-		CustomList1 customList = new CustomList1(this,memos);
+		CustomList1 customList = new CustomList1(this,memos,priorities,checks);
 		customList.setInter(this);
 		lv1.setAdapter(customList);
 		
@@ -203,15 +247,15 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 				}
 				else if(item.getTitle().equals("Priority high"))
 				{
-					changeTextColour("red");
+					changeTextColour(memos[position],"red");
 				}
 				else if(item.getTitle().equals("Priority medium"))
 				{
-					changeTextColour("black");
+					changeTextColour(memos[position],"black");
 				}
 				else if(item.getTitle().equals("Priority low"))
 				{
-					changeTextColour("green");
+					changeTextColour(memos[position],"green");
 				}
 					Toast.makeText(Memo.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
 					
@@ -225,11 +269,16 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 	}
 	
 	
-	protected void changeTextColour(String string) 
+	protected void changeTextColour(String m,String string) 
 	{
 		// TODO Auto-generated method stub
 		// Here we change the text colour of our list view elements 
-		
+		if(string.equals("red"))
+			handler.updateRowPriority(m, 2);
+		else if(string.equals("red"))
+			handler.updateRowPriority(m, 0);
+		else 
+			handler.updateRowPriority(m, 1);
 	}
 	
 	@Override
@@ -319,15 +368,15 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 				}
 				else if(item.getTitle().equals("Priority high"))
 				{
-					changeTextColour("red");
+					changeTextColour(memos[position],"red");
 				}
 				else if(item.getTitle().equals("Priority medium"))
 				{
-					changeTextColour("black");
+					changeTextColour(memos[position],"black");
 				}
 				else if(item.getTitle().equals("Priority low"))
 				{
-					changeTextColour("green");
+					changeTextColour(memos[position],"green");
 				}
 					Toast.makeText(Memo.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
 					

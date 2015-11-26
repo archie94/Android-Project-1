@@ -6,3 +6,5 @@ A list of features to be added in this app
 - Increase font in memo
 - Highlight selected memo 
 - Add a background to memo activity
+- Add proper app icon
+

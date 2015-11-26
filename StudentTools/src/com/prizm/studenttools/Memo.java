@@ -280,6 +280,7 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 		else 
 			handler.updateRowPriority(m, 1);
 		printDataBase();
+		updateWidget();
 	}
 	
 	@Override
@@ -389,6 +390,7 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 		
 		printDataBase();
 	}
+	
 	
 	
 }

@@ -86,11 +86,24 @@ public class CustomList1 extends BaseAdapter
 		
 		
 		holder.textView.setText(memoList[position]);
+		
+		/*
+		 * Set text colour according to priorities 
+		 */
 		holder.textView.setTextColor(Color.BLACK);
 		if(priorityList[position].equals("0"))
 			holder.textView.setTextColor(Color.GREEN);
 		else if(priorityList[position].equals("2"))
 			holder.textView.setTextColor(Color.RED);
+		
+		/*
+		 * set CheckBox accordingly 
+		 */
+		if(checkList[position].equals("0"))
+			holder.checkBox.setChecked(false);
+		else 
+			holder.checkBox.setChecked(true);
+		
 		
 		
 		rowView.setOnClickListener(new OnClickListener()
@@ -102,10 +115,10 @@ public class CustomList1 extends BaseAdapter
 				// TODO Auto-generated method stub
 				if(inter!=null)
 				{
-					inter.onClick(position);
-				}
+					inter.onClick(position);				}
 			}
 		});
+		
 		return rowView;
 	}
 	

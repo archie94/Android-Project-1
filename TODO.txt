@@ -8,4 +8,5 @@ A list of features to be added in this app
 - Add a background to memo activity
 - Add proper app icon
 - Add description field in memo view 
+- Add an optional image with each memo 
 

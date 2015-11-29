@@ -12,10 +12,10 @@ Basic Layout Completed
 	
 ###Screenshots 
 - Memo
-(https://lh3.googleusercontent.com/PIm1sPLKMOp1xWqYlJam31G1qvsTsjtEaMIkjOZ9pnkiBf1Jt0z8fN3tS2w7Tfc_o_M=h900-rw)
-(https://lh3.googleusercontent.com/IXnkIcRo8kDPS8V43KOq5ZbVI2HohbrCpFNUZO6CpvRkW0JB91tjwhbzvm8n515AtNU=h900-rw)
-(https://lh3.googleusercontent.com/pp3HDi0xSslwMCTm3_XZVS4WK-iirWljmUzRB5ZO4IIV-rZW0QKQlcTh7qWbW7_IVRU=h900-rw)
-(https://lh3.googleusercontent.com/00S8y_yPd_26qzkxmjneY1oaebYIZLN18dMAUYSzJSRUxdNnyJXG-P3aaUe1BgRBlFU=h900-rw)
+![scr_1](https://cloud.githubusercontent.com/assets/12955150/11455652/36280896-968f-11e5-9b43-b1e9b9297332.png)
+![scr_2](https://cloud.githubusercontent.com/assets/12955150/11455658/5897a364-968f-11e5-86ec-2d4c2c142e09.png)
+![scr_3](https://cloud.githubusercontent.com/assets/12955150/11455659/730c797c-968f-11e5-9453-a6d61fb53d27.png)
+![screenshot_2015-11-27-19-06-59](https://cloud.githubusercontent.com/assets/12955150/11455661/7b1cd86e-968f-11e5-8138-8e24afcf4d83.png)
 
 
 ###TODO 

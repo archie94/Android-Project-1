@@ -15,6 +15,17 @@
         
     </EditText>
 
+    <EditText
+        android:id="@+id/memo_view_editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:inputType="textCapSentences"
+        android:hint="Description"
+        android:ems="10" >
+
+        
+    </EditText>
     
 
 </LinearLayout>

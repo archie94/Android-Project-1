@@ -12,6 +12,7 @@
          />
     
     
+    
     <TextView
         android:id="@+id/custom_list_memo_textView"
         android:layout_width="match_parent"

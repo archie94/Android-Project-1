@@ -1,7 +1,5 @@
 package com.prizm.studenttools;
 
-import com.prizm.studenttools.CustomList1.CustomListInterface;
-
 import android.app.ListActivity;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
@@ -19,9 +17,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
+
+import com.prizm.studenttools.CustomList1.CustomListInterface;
 
 
 public class Memo extends ListActivity implements View.OnClickListener, CustomListInterface
@@ -35,6 +36,8 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 	EditText et;
 	DBHandler handler;
 	int pos ; 
+	ProgressBar progressBar;
+	TextView progressIndication;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -69,6 +72,43 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 		});
 		printDataBase();
 	}
+	
+	private void initialise() 
+	{
+		// TODO Auto-generated method stub
+		str="";
+		/* Changed the id from memo_listView1 to android:id/list since we are using ListActivity class now 
+		 * the definition of lv1 variable has also changed from lv1=(ListView)findViewById(R.id.memo_listView1);
+		 * to lv1=(ListView)findViewById(android.R.id.list); 
+		 */
+		lv1=(ListView)findViewById(android.R.id.list);
+		//lv1=(ListView)findViewById(R.id.customList);
+		add=(Button)findViewById(R.id.memo_addMore);
+		et=(EditText)findViewById(R.id.memo_editText1);
+		handler=new DBHandler(this,null,null,1);
+		progressBar = (ProgressBar)findViewById(R.id.memo_progressBar1);
+		progressIndication = (TextView)findViewById(R.id.memo_progressIndication);
+	}
+	
+	
+	
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus) 
+	{
+		// TODO Auto-generated method stub
+		super.onWindowFocusChanged(hasFocus);
+		/*
+		 * Add a background image to the ADD button 
+		 */
+		
+		Bitmap bitmapAdd = BitmapFactory.decodeResource(getResources(), R.drawable.add_icon);
+		bitmapAdd = Bitmap.createScaledBitmap(bitmapAdd, add.getWidth(), add.getHeight(), true);
+		Resources r1=getResources();
+		add.setBackground(new BitmapDrawable(r1,bitmapAdd));
+	}
+	
+	
+	
 	private void addDataBase()
 	{
 		// add a row to the database 
@@ -169,24 +209,11 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 		lv1.setAdapter(customList);
 		
 		//lv1.setAdapter(new CustomList1(this,memos));
-		
+		progressIndication.setText("0/"+count+" Completed");
 		
 	}
 
-	private void initialise() 
-	{
-		// TODO Auto-generated method stub
-		str="";
-		/* Changed the id from memo_listView1 to android:id/list since we are using ListActivity class now 
-		 * the definition of lv1 variable has also changed from lv1=(ListView)findViewById(R.id.memo_listView1);
-		 * to lv1=(ListView)findViewById(android.R.id.list); 
-		 */
-		lv1=(ListView)findViewById(android.R.id.list);
-		//lv1=(ListView)findViewById(R.id.customList);
-		add=(Button)findViewById(R.id.memo_addMore);
-		et=(EditText)findViewById(R.id.memo_editText1);
-		handler=new DBHandler(this,null,null,1);
-	}
+	
 
 	@Override
 	public void onClick(View arg0) 
@@ -212,61 +239,7 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 	}
 	
 	
-	@Override
-	protected void onListItemClick(ListView l, View v, final int position, long id) 
-	{
-		// TODO Auto-generated method stub
-		super.onListItemClick(l, v, position, id);
-		pos = position ; 
-		// Creating instance of PopupMenu
-		PopupMenu popup = new PopupMenu(Memo.this,add);
-		// inflate the menu with xml file 
-		popup.getMenuInflater().inflate(R.menu.popup_menu,popup.getMenu());
-		// register pop up with OnMenuItemClickListener
-		popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() 
-		{
-			
-			@Override
-			public boolean onMenuItemClick(MenuItem item) 
-			{
-				// TODO Auto-generated method stub
-				if(item.getTitle().equals("Delete"))
-				{
-					// delete the current memo 
-					handler.deleteRow(memos[position]);
-					printDataBase();
-					updateWidget(); // update widget after a deletion 
-				}
-				else if(item.getTitle().equals("View / Edit"))
-				{
-					// start a new activity MemoView in which we edit our memo 
-					Toast.makeText(Memo.this,"Position = " +pos,Toast.LENGTH_SHORT).show();
-					Intent newIntent = new Intent(Memo.this,MemoView.class);
-					newIntent.putExtra("memo",memos[position]);
-					startActivity(newIntent);
-				}
-				else if(item.getTitle().equals("Priority high"))
-				{
-					changeTextColour(memos[position],"red");
-				}
-				else if(item.getTitle().equals("Priority medium"))
-				{
-					changeTextColour(memos[position],"black");
-				}
-				else if(item.getTitle().equals("Priority low"))
-				{
-					changeTextColour(memos[position],"green");
-				}
-					Toast.makeText(Memo.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
-					
-				return true;
-			}
-		});
-		// show popup menu 
-		popup.show();
-		
-		printDataBase();
-	}
+	
 	
 	
 	protected void changeTextColour(String m,String string) 
@@ -316,20 +289,7 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 	}
 	
 	
-	@Override
-	public void onWindowFocusChanged(boolean hasFocus) 
-	{
-		// TODO Auto-generated method stub
-		super.onWindowFocusChanged(hasFocus);
-		/*
-		 * Add a background image to the ADD button 
-		 */
-		
-		Bitmap bitmapAdd = BitmapFactory.decodeResource(getResources(), R.drawable.add_icon);
-		bitmapAdd = Bitmap.createScaledBitmap(bitmapAdd, add.getWidth(), add.getHeight(), true);
-		Resources r1=getResources();
-		add.setBackground(new BitmapDrawable(r1,bitmapAdd));
-	}
+	
 	
 	
 	

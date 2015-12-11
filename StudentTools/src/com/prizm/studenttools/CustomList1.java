@@ -9,7 +9,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 public class CustomList1 extends BaseAdapter
@@ -19,7 +18,7 @@ public class CustomList1 extends BaseAdapter
 	private final String priorityList[];
 	private final String checkList[];
 	private CustomListInterface inter;
-	private CustomListCheckboxInterface interCheck;
+	private CustomListInterface interCheck;
 
 	public CustomList1(Context context, String[] nameList, String[] pList, String[] cList)
 	{
@@ -123,17 +122,19 @@ public class CustomList1 extends BaseAdapter
 		
 		
 		
-		holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() 
+		
+		holder.checkBox.setOnClickListener(new View.OnClickListener() 
 		{
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) 
-            {
-            	if(interCheck != null)
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				if(interCheck != null)
             	{
             		interCheck.onCustomCheck(position);
             	}
-            }
-        });
+			}
+		});
 		
 		return rowView;
 	}
@@ -143,7 +144,7 @@ public class CustomList1 extends BaseAdapter
 		this.inter=inter; 
 	}
 	
-	public void setInterCheck(CustomListCheckboxInterface interCheck)
+	public void setInterCheck(CustomListInterface interCheck)
 	{
 		this.interCheck=interCheck;
 	}
@@ -151,9 +152,6 @@ public class CustomList1 extends BaseAdapter
 	public interface CustomListInterface
 	{
 		public void onClick(int position);
-	}
-	public interface CustomListCheckboxInterface
-	{
 		public void onCustomCheck(int position);
 	}
 	

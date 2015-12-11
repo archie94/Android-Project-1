@@ -22,11 +22,11 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
-import com.prizm.studenttools.CustomList1.CustomListCheckboxInterface;
+//import com.prizm.studenttools.CustomList1.CustomListCheckboxInterface;
 import com.prizm.studenttools.CustomList1.CustomListInterface;
 
 
-public class Memo extends ListActivity implements View.OnClickListener, CustomListInterface , CustomListCheckboxInterface
+public class Memo extends ListActivity implements View.OnClickListener, CustomListInterface 
 {
 	Button add;
 	String memos[];
@@ -184,12 +184,15 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 		counter=count;
 		counter--;
 		p=0;
+		int count2=0;
 		for(i=0;i<dbStringC.length();i++)
 		{
 			if(dbStringC.charAt(i)=='\n')
 			{
 				checks[counter--]=dbStringC.substring(p, i);//store each individual memo into a string
 				p=i+1;
+				if(checks[counter+1].equals("1"))
+					count2++;
 			}
 		}
 		
@@ -211,8 +214,8 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 		lv1.setAdapter(customList);
 		
 		//lv1.setAdapter(new CustomList1(this,memos));
-		progressIndication.setText("0/"+count+" Completed");
-		
+		progressIndication.setText(count2+"/"+count+" Completed");
+		progressBar.setProgress(count2*100/count);
 	}
 
 	

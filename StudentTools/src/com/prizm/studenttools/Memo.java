@@ -22,10 +22,11 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
+import com.prizm.studenttools.CustomList1.CustomListCheckboxInterface;
 import com.prizm.studenttools.CustomList1.CustomListInterface;
 
 
-public class Memo extends ListActivity implements View.OnClickListener, CustomListInterface
+public class Memo extends ListActivity implements View.OnClickListener, CustomListInterface , CustomListCheckboxInterface
 {
 	Button add;
 	String memos[];
@@ -206,6 +207,7 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 		//lv1.setAdapter(new ArrayAdapter<String>(Memo.this,android.R.layout.simple_list_item_1,memos));
 		CustomList1 customList = new CustomList1(this,memos,priorities,checks);
 		customList.setInter(this);
+		customList.setInterCheck(this);
 		lv1.setAdapter(customList);
 		
 		//lv1.setAdapter(new CustomList1(this,memos));
@@ -349,6 +351,19 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 		popup.show();
 		
 		printDataBase();
+	}
+
+	@Override
+	public void onCustomCheck(int position) 
+	{
+		// TODO Auto-generated method stub
+		if(checks[position].equals("0"))
+			handler.updateRowChecked(memos[position], 1);
+		else if(checks[position].equals("1"))
+			handler.updateRowChecked(memos[position], 0);
+		printDataBase();
+		Toast.makeText(Memo.this,"You Clicked : " + position,Toast.LENGTH_SHORT).show();
+
 	}
 	
 	

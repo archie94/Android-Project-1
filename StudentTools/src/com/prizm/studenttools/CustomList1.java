@@ -116,7 +116,7 @@ public class CustomList1 extends BaseAdapter
 				// TODO Auto-generated method stub
 				if(inter!=null)
 				{
-					inter.onClick(position);				
+					inter.onClick(position,arg0);				
 				}
 			}
 		});
@@ -152,7 +152,7 @@ public class CustomList1 extends BaseAdapter
 	
 	public interface CustomListInterface
 	{
-		public void onClick(int position);
+		public void onClick(int position,View view);
 		public void onCustomCheck(int position);
 	}
 	

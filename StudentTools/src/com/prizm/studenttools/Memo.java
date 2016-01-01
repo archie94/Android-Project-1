@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -297,10 +298,14 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 	
 	
 	@Override
-	public void onClick(final int position) 
+	public void onClick(final int position,View view) 
 	{
 		// This method describes what options to display when a memo is clicked 
 		
+		
+		// Change the background of the item which is pressed 
+		//view.setSelected(true);
+		view.setPressed(true);
 		
 		pos = position ; 
 		// Creating instance of PopupMenu

@@ -42,7 +42,6 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.memo);
 		initialise();
@@ -60,7 +59,7 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 			@Override
 			public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) 
 			{
-				// TODO Auto-generated method stub
+				// Defines what happens when we click on done key 
 				if(actionId == EditorInfo.IME_ACTION_DONE)
 				{
 					str=et.getText().toString();
@@ -76,7 +75,6 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 	
 	private void initialise() 
 	{
-		// TODO Auto-generated method stub
 		str="";
 		/* Changed the id from memo_listView1 to android:id/list since we are using ListActivity class now 
 		 * the definition of lv1 variable has also changed from lv1=(ListView)findViewById(R.id.memo_listView1);
@@ -96,7 +94,6 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus) 
 	{
-		// TODO Auto-generated method stub
 		super.onWindowFocusChanged(hasFocus);
 		/*
 		 * Add a background image to the ADD button 
@@ -302,7 +299,7 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 	@Override
 	public void onClick(final int position) 
 	{
-		// TODO Auto-generated method stub
+		// This method describes what options to display when a memo is clicked 
 		
 		
 		pos = position ; 
@@ -359,14 +356,12 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 	@Override
 	public void onCustomCheck(int position) 
 	{
-		// TODO Auto-generated method stub
+		// This method will identify the checkbox corresponding to memo is checked or not 
 		if(checks[position].equals("0"))
 			handler.updateRowChecked(memos[position], 1);
 		else if(checks[position].equals("1"))
 			handler.updateRowChecked(memos[position], 0);
 		printDataBase();
-		Toast.makeText(Memo.this,"You Clicked : " + position,Toast.LENGTH_SHORT).show();
-
 	}
 	
 	

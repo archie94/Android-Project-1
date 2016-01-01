@@ -106,6 +106,7 @@ public class CustomList1 extends BaseAdapter
 			holder.checkBox.setChecked(true);
 		
 		
+		// listener for memo text 
 		rowView.setOnClickListener(new OnClickListener()
 		{
 
@@ -122,7 +123,7 @@ public class CustomList1 extends BaseAdapter
 		
 		
 		
-		
+		// listener for checkbox 
 		holder.checkBox.setOnClickListener(new View.OnClickListener() 
 		{
 			

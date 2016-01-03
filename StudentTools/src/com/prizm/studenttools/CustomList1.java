@@ -3,6 +3,7 @@ package com.prizm.studenttools;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -101,9 +102,17 @@ public class CustomList1 extends BaseAdapter
 		 * set CheckBox accordingly 
 		 */
 		if(checkList[position].equals("0"))
+		{
 			holder.checkBox.setChecked(false);
+			holder.textView.setPaintFlags(holder.textView.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+		}
 		else if(checkList[position].equals("1"))
+		{
 			holder.checkBox.setChecked(true);
+			// strike off memo for completed task and set priority to normal 
+			holder.textView.setPaintFlags(holder.textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+			holder.textView.setTextColor(Color.BLACK);
+		}
 		
 		
 		// listener for memo text 

@@ -32,10 +32,115 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton1"
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        
+        >
+        
+        <ToggleButton
+        android:id="@+id/memo_view_toggleButton_on_off"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="30"
         android:text="ToggleButton" />
+        
+        <ToggleButton
+        android:id="@+id/memo_view_toggleButton_daily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="30"
+        android:textOn="Daily"
+        android:textOff="Daily"
+        android:text="Daily" />
+        
+        <ToggleButton
+        android:id="@+id/memo_view_toggleButton_weekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="30"
+        android:textOn="Weekly"
+        android:textOff="Weekly"
+        android:text="Weekly" />
+        
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:weightSum="70"
+        
+        >
+        
+        <ToggleButton
+        android:id="@+id/memo_view_toggleButton_on_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:text="ToggleButton" />
+        
+        <ToggleButton
+        android:id="@+id/memo_view_toggleButton_daily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:textOn="Daily"
+        android:textOff="Daily"
+        android:text="Daily" />
+        
+        <ToggleButton
+        android:id="@+id/memo_view_toggleButton_weekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:textOn="Weekly"
+        android:textOff="Weekly"
+        android:text="Weekly" />
+        
+        <ToggleButton
+        android:id="@+id/memo_view_toggleButton_weekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:textOn="Weekly"
+        android:textOff="Weekly"
+        android:text="Weekly" />
+        
+        <ToggleButton
+        android:id="@+id/memo_view_toggleButton_weekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:textOn="Weekly"
+        android:textOff="Weekly"
+        android:text="Weekly" />
+        
+        <ToggleButton
+        android:id="@+id/memo_view_toggleButton_weekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:textOn="Weekly"
+        android:textOff="Weekly"
+        android:text="Weekly" />
+        
+        <ToggleButton
+        android:id="@+id/memo_view_toggleButton_weekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:textOn="Weekly"
+        android:textOff="Weekly"
+        android:text="Weekly" />
+        
+        
+        
+    </LinearLayout>
+    
 
 </LinearLayout>

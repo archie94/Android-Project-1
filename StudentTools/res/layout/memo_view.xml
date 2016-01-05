@@ -27,6 +27,14 @@
         
     </EditText>
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Choose Time"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <TimePicker
         android:id="@+id/timePicker1"
         android:layout_width="match_parent"
@@ -35,9 +43,9 @@
     
     <LinearLayout 
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="100"
+        android:weightSum="90"
         
         >
         
@@ -71,71 +79,73 @@
     
     <LinearLayout 
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="70"
         
         >
         
         <ToggleButton
-        android:id="@+id/memo_view_toggleButton_on_off"
+        android:id="@+id/memo_view_toggleButton_mon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="10"
-        android:text="ToggleButton" />
+        android:textOn="MON"
+        android:textOff="MON"
+        android:text="" />
         
         <ToggleButton
-        android:id="@+id/memo_view_toggleButton_daily"
+        android:id="@+id/memo_view_toggleButton_tue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="10"
-        android:textOn="Daily"
-        android:textOff="Daily"
+        android:textOn="TUE"
+        android:textOff="TUE"
         android:text="Daily" />
         
         <ToggleButton
-        android:id="@+id/memo_view_toggleButton_weekly"
+        android:id="@+id/memo_view_toggleButton_wed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="10"
-        android:textOn="Weekly"
-        android:textOff="Weekly"
+        android:textOn="WED"
+        android:textOff="WED"
         android:text="Weekly" />
         
         <ToggleButton
-        android:id="@+id/memo_view_toggleButton_weekly"
+        android:id="@+id/memo_view_toggleButton_thr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="10"
-        android:textOn="Weekly"
-        android:textOff="Weekly"
+        android:textOn="THU"
+        android:textOff="THU"
         android:text="Weekly" />
         
         <ToggleButton
-        android:id="@+id/memo_view_toggleButton_weekly"
+        android:id="@+id/memo_view_toggleButton_fri"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="10"
-        android:textOn="Weekly"
-        android:textOff="Weekly"
+        android:textOn="FRI"
+        android:textOff="FRI"
         android:text="Weekly" />
         
         <ToggleButton
-        android:id="@+id/memo_view_toggleButton_weekly"
+        android:id="@+id/memo_view_toggleButton_sat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="10"
-        android:textOn="Weekly"
-        android:textOff="Weekly"
+        android:textOn="SAT"
+        android:textOff="SAT"
         android:text="Weekly" />
         
         <ToggleButton
-        android:id="@+id/memo_view_toggleButton_weekly"
+        android:id="@+id/memo_view_toggleButton_sun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="10"
-        android:textOn="Weekly"
-        android:textOff="Weekly"
+        android:textOn="SUN"
+        android:textOff="SUN"
         android:text="Weekly" />
         
         

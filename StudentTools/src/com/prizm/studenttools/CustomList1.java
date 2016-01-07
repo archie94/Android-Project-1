@@ -57,9 +57,9 @@ public class CustomList1 extends BaseAdapter
 		ImageView imageView;
 		public ViewHolder(View v)
 		{
-			imageView = (ImageView)v.findViewById(R.id.custom_list_memo_imageView);
-			textView = (TextView)v.findViewById(R.id.custom_list_memo_textView);
 			checkBox = (CheckBox)v.findViewById(R.id.custom_list_memo_checkBox);
+			textView = (TextView)v.findViewById(R.id.custom_list_memo_textView);
+			imageView = (ImageView)v.findViewById(R.id.custom_list_memo_imageView);
 		}
 	}
 	@Override

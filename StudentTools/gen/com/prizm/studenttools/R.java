@@ -52,8 +52,8 @@ public final class R {
         public static final int button_three_Result=0x7f0a003e;
         public static final int button_two_Result=0x7f0a004c;
         public static final int custom_list_memo_checkBox=0x7f0a0014;
-        public static final int custom_list_memo_imageView=0x7f0a0015;
-        public static final int custom_list_memo_textView=0x7f0a0016;
+        public static final int custom_list_memo_imageView=0x7f0a0016;
+        public static final int custom_list_memo_textView=0x7f0a0015;
         public static final int editText1=0x7f0a0017;
         public static final int editText_three_1=0x7f0a0030;
         public static final int editText_three_10=0x7f0a0035;

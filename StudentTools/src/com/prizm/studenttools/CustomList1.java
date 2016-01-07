@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CustomList1 extends BaseAdapter
@@ -53,8 +54,10 @@ public class CustomList1 extends BaseAdapter
 	{
 		TextView textView;
 		CheckBox checkBox;
+		ImageView imageView;
 		public ViewHolder(View v)
 		{
+			imageView = (ImageView)v.findViewById(R.id.custom_list_memo_imageView);
 			textView = (TextView)v.findViewById(R.id.custom_list_memo_textView);
 			checkBox = (CheckBox)v.findViewById(R.id.custom_list_memo_checkBox);
 		}

@@ -37,7 +37,7 @@
         android:id="@+id/custom_list_memo_imageView"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:src="@drawable/alarm"
+        android:src="@drawable/alarm2"
         android:layout_weight="10"
         android:layout_gravity="center_vertical"
         />

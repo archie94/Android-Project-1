@@ -86,6 +86,7 @@ public final class R {
         public static final int memo_textView=0x7f0a001d;
         public static final int memo_view_editText1=0x7f0a0022;
         public static final int memo_view_editText2=0x7f0a0023;
+        public static final int memo_view_timePicker1=0x7f0a0025;
         public static final int memo_view_toggleButton_daily=0x7f0a0027;
         public static final int memo_view_toggleButton_fri=0x7f0a002d;
         public static final int memo_view_toggleButton_mon=0x7f0a0029;
@@ -115,7 +116,6 @@ public final class R {
         public static final int textView_two_x1=0x7f0a0043;
         public static final int textView_two_y1=0x7f0a0045;
         public static final int textView_two_y2=0x7f0a004a;
-        public static final int timePicker1=0x7f0a0025;
         public static final int widget_memo_layout_firstTV=0x7f0a0050;
         public static final int widget_memo_layout_secondTV=0x7f0a0051;
         public static final int widget_memo_layout_thirdTV=0x7f0a0052;

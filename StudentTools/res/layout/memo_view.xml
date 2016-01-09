@@ -36,7 +36,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TimePicker
-        android:id="@+id/timePicker1"
+        android:id="@+id/memo_view_timePicker1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

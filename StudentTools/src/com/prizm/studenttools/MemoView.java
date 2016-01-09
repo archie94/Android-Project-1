@@ -1,13 +1,20 @@
 package com.prizm.studenttools;
 
+import java.util.Calendar;
+
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
+import android.widget.TimePicker;
+import android.widget.ToggleButton;
 
 public class MemoView extends Activity  
 {
@@ -16,6 +23,25 @@ public class MemoView extends Activity
 	 */
 	EditText memo ; 
 
+	AlarmManager alarmManager;
+	private PendingIntent pendingIntent;
+	private TimePicker timePicker;
+	private static MemoView instance;
+	
+	
+	public static MemoView getInstance()
+	{
+		return instance;
+	}
+	
+	@Override
+	protected void onStart() 
+	{
+		// TODO Auto-generated method stub
+		super.onStart();
+		instance = this;
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -23,6 +49,11 @@ public class MemoView extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.memo_view);
 		memo = (EditText)findViewById(R.id.memo_view_editText1);
+		final ToggleButton alarmOn;
+		alarmOn = (ToggleButton)findViewById(R.id.memo_view_toggleButton_on_off);
+		timePicker = (TimePicker)findViewById(R.id.memo_view_timePicker1);
+		alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+		
 		
 		/*
 		 * Collect the memo received from Memo activity 
@@ -59,6 +90,27 @@ public class MemoView extends Activity
 			
 		});
 		
+		
+		alarmOn.setOnClickListener(new View.OnClickListener() 
+		{
+			
+			@Override
+			public void onClick(View arg0) 
+			{
+				// TODO Auto-generated method stub
+				if(alarmOn.isChecked() == true)
+				{
+					Calendar calender = Calendar.getInstance();
+					calender.set(Calendar.HOUR_OF_DAY, timePicker.getCurrentHour());
+					calender.set(Calendar.MINUTE, timePicker.getCurrentMinute());
+					// set pending intent here 
+				}
+				else
+				{
+					// clear alarm here
+				}
+			}
+		});
 		
 	}
 	private void editMemo()

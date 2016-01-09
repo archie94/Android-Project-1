@@ -7,6 +7,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -14,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.TimePicker;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MemoView extends Activity  
@@ -100,14 +102,20 @@ public class MemoView extends Activity
 				// TODO Auto-generated method stub
 				if(alarmOn.isChecked() == true)
 				{
-					Calendar calender = Calendar.getInstance();
-					calender.set(Calendar.HOUR_OF_DAY, timePicker.getCurrentHour());
-					calender.set(Calendar.MINUTE, timePicker.getCurrentMinute());
-					// set pending intent here 
+					// set alarm 
+					Calendar calendar = Calendar.getInstance();
+					calendar.set(Calendar.HOUR_OF_DAY, timePicker.getCurrentHour());
+					calendar.set(Calendar.MINUTE, timePicker.getCurrentMinute());
+					Intent startIntent = new Intent(MemoView.this, AlarmReceiver.class);
+					pendingIntent = PendingIntent.getBroadcast(MemoView.this, 0, startIntent, 0);
+					alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
+					Log.d("hi", "alarm on");
 				}
 				else
 				{
-					// clear alarm here
+					// clear alarm 
+					alarmManager.cancel(pendingIntent);
+					Log.d("hi", "alarm on");
 				}
 			}
 		});

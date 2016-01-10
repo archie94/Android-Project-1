@@ -213,6 +213,7 @@ public class Memo extends ListActivity implements View.OnClickListener, CustomLi
 		
 		//lv1.setAdapter(new CustomList1(this,memos));
 		progressIndication.setText(count2+"/"+count+" Completed");
+		if(count!=0) // prevent divide by zero 
 		progressBar.setProgress(count2*100/count);
 	}
 
